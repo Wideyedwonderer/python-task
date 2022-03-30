@@ -43,16 +43,16 @@ def inf_action_prompt():
 
     print(func_arg_names)
     for arg_name in func_arg_names:
-        _prompt = "Please provide " + arg_name
+        _prompt = "\nPlease provide " + arg_name
         func_argument_values.append(infinite_input(_prompt))
     try:
         res = action(*func_argument_values)
-        print('\nSuccess!')
+        print('\n \033[92m Success! \033[0m \n')
         if res != None:
           print(res)
           print('\n')
     except BaseException as err:
-        print(str(err))
+        print('\n\033[91m' + str(err)+ '\n \033[0m')
     inf_action_prompt()
 
 inf_action_prompt()

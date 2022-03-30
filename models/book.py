@@ -1,13 +1,8 @@
 from itertools import count
 from turtle import title
 
-from utils import isValidISBN
-
-
 class Book:
     def __init__(self,isbn,title,pages,count):
-        if not isValidISBN(isbn):
-            raise  BaseException('Please provide valid 10 digit ISBN')
         if pages < 1:
             raise BaseException("Book pages can't be less than 1")
 
